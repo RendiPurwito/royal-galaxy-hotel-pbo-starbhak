@@ -11,7 +11,7 @@ class Booking extends Model
     protected $table = 'bookings';
     protected $guarded = [''];
 
-    public function guest(){
+    public function user(){
         return $this->belongsTo(User::class,'user_id');
     }
     

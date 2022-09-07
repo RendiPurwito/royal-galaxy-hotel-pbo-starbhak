@@ -61,10 +61,16 @@
                             </li>
                         @endcan
                         @can('receptionist')
-                            <li class="sidebar-item {{ Request::is('admin/user*') ? 'active' : '' }}">
-                                <a href="/admin/user" class='sidebar-link'>
-                                    <i data-feather="user" width="20"></i>
-                                    <span>Register New User</span>
+                            <li class="sidebar-item {{ Request::is('admin/dashboard*') ? 'active' : '' }} ">
+                                <a href="/receptionist/dashboard" class='sidebar-link'>
+                                    <i data-feather="home" width="20"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item {{ Request::is('receptionist/booking*') ? 'active' : '' }}">
+                                <a href="/receptionist/booking" class='sidebar-link'>
+                                    <i data-feather="book" width="20"></i>
+                                    <span>Booking Data</span>
                                 </a>
                             </li>
                         @endcan

@@ -6,14 +6,15 @@ use App\Models\Room;
 use App\Models\User;
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class BookingController extends Controller
+class ReceptionistBookingController extends Controller
 {
     public function index(){
         $booking = Booking::all()->sortByDesc('created_at');
         $user = User::all();
         $room = Room::all();
-        return view('admin.booking.index',[
+        return view('receptionist.booking.index',[
             'booking' => $booking,
             'user' => $user,
             'room' => $room
@@ -22,7 +23,7 @@ class BookingController extends Controller
 
     public function create(){
         $user = User::where('role','user')->orderBy('created_at','desc')->get();
-        return view('admin.booking.create',[
+        return view('receptionist.booking.create',[
             'booking' => Booking::all(),
             // 'user' => User::all()->sortBy('name'),
             'user' => $user,
@@ -36,11 +37,11 @@ class BookingController extends Controller
             'room_id' => ['required'],
             'check_in' => ['required'],
             'check_out' => ['required'],
-            'total_pembayaran' => ['required'],
+            'total_payment' => ['required'],
         ]);
 
         Booking::create($validasi);
-        return redirect('/admin/booking')->with('success','Data berhasil di tambah!');
+        return redirect('/receptionist/booking')->with('success','Data berhasil di tambah!');
     }
 
     public function edit($id){
@@ -61,13 +62,13 @@ class BookingController extends Controller
         ]);
 
         Booking::where('id',$id)->update($validasi);
-        return redirect('/admin/booking')->with('Edit','Data berhasil di ubah!');
+        return redirect('/receptionist/booking')->with('Edit','Data berhasil di ubah!');
     }
 
     public function destroy($id){
         $booking = Booking::find($id);
         $booking->delete();
 
-        return redirect('/admin/booking')->with('Delete','Data berhasil di hapus!');
+        return redirect('/receptionist/booking')->with('Delete','Data berhasil di hapus!');
     }
 }
