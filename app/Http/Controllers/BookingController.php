@@ -13,7 +13,7 @@ class BookingController extends Controller
         $booking = Booking::all()->sortByDesc('created_at');
         $user = User::all();
         $room = Room::all();
-        return view('booking.index',[
+        return view('admin.booking.index',[
             'booking' => $booking,
             'user' => $user,
             'room' => $room
@@ -21,7 +21,7 @@ class BookingController extends Controller
     }
 
     public function create(){
-        return view('booking.create',[
+        return view('admin.booking.create',[
             'booking' => Booking::all(),
             'user' => User::all()->sortBy('name'),
             'room' => Room::all()->sortBy('room_type')

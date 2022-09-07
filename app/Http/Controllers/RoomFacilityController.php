@@ -10,7 +10,7 @@ class RoomFacilityController extends Controller
 {
     public function index(){
         return view('admin.room-facility.index',[
-            'room_facility' => RoomFacility::all(),
+            'room_facility' => RoomFacility::all()->sortByDesc('created_at')
         ]);
     }
 
@@ -44,7 +44,7 @@ class RoomFacilityController extends Controller
 
     public function destroy($id){
         $room_facility = RoomFacility::find($id);
-        $room_facility->delete();
+        $room_facility->delete($room_facility);
 
         return redirect()->route('room-facility')->with('delete','Data berhasil di Hapus!');
     }
