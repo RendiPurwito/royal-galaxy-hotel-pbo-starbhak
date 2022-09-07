@@ -28,5 +28,14 @@ class DatabaseSeeder extends Seeder
         RoomFacility::factory(10)->create();
         
         PublicFacility::factory(50)->create();
+        
+        User::create([
+            'name' => 'Sabrina Putri',
+            'role' => 'admin',
+            'username' => 'sabrina',
+            'email' => 'sabrina@gmail.com',
+            'password' => bcrypt('password')
+        ]);
+
     }
 }
