@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RoomFacilityController;
 use App\Http\Controllers\PublicFacilityController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,21 @@ Route::get('/', function () {
 
 Route::get('/admin/dashboard',[AdminController::class,'index']);
 
-Route::get('/login',[LoginController::class,'index']);
+Route::get('/login',[LoginController::class,'indexLogin'])->name('login');
 Route::post('/login',[LoginController::class,'authenticate']);
+Route::post('/logout',[LoginController::class,'logout']);
+
+Route::get('/register',[LoginController::class,'indexRegister'])->name('register');
+Route::post('/register',[LoginController::class,'storeRegister']);
+
+
+
+Route::get('/admin/user',[RegisterController::class,'index'])->name('user');
+Route::get('/admin/user/create',[RegisterController::class,'create']);
+Route::post('/admin/user',[RegisterController::class,'store']);
+Route::get('/admin/user/{id}/edit',[RegisterController::class,'edit']);
+Route::post('/admin/user/{id}',[RegisterController::class,'update']);
+Route::get('/admin/user/{id}',[RegisterController::class,'destroy']);
 
 Route::get('/admin/room-facility',[RoomFacilityController::class,'index'])->name('room-facility');
 Route::get('/admin/room-facility/create',[RoomFacilityController::class,'create']);

@@ -28,7 +28,7 @@
             
             
             
-                <li class="sidebar-item active ">
+                <li class="sidebar-item {{ Request::is('admin/dashboard*') ? 'active' : '' }} ">
                     <a href="/admin/dashboard" class='sidebar-link'>
                         <i data-feather="home" width="20"></i> 
                         <span>Dashboard</span>
@@ -64,7 +64,15 @@
                         </li>
     
                     </ul>
-                </li>         
+                </li> 
+                
+                <li class="sidebar-item {{ Request::is('admin/user*') ? 'active' : '' }}">
+                    <a href="/admin/user" class='sidebar-link'>
+                        <i data-feather="user" width="20"></i> 
+                        <span>Register New User</span>
+                    </a>
+                    
+                </li>
         </ul>
     </div>
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
@@ -84,14 +92,14 @@
                                 <div class="avatar mr-1">
                                     <img src="/voler/dist/assets/images/avatar/avatar-s-1.png" alt="" srcset="">
                                 </div>
-                                <div class="d-none d-md-block d-lg-inline-block">Hi, Saugi</div>
+                                <div class="d-none d-md-block d-lg-inline-block">Hi, {{ auth()->user()->username }}</div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>
-                                <a class="dropdown-item active" href="#"><i data-feather="mail"></i> Messages</a>
-                                <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                                {{-- <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a> --}}
+                                <form action="/logout" method="post" class="form-class">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item"><i data-feather="log-out"></i>Logout</button>
+                                </form> 
                             </div>
                         </li>
                     </ul>

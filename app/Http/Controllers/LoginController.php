@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index(){
+    public function indexLogin(){
         return view('auth.login');
     }
 
@@ -33,6 +34,26 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
+    }
+
+    public function indexRegister(){
+        return view('auth.register');
+    }
+
+    public function storeRegister(Request $request){
+
+        $validatedData = $this->validate($request,[
+            'name' => ['required'],
+            'role' => ['required'],
+            'username' => ['required'],
+            'email' => ['required'],
+            'password' => ['required']
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+        User::create($validatedData);
+
+        return redirect()->route('login')->with('Success','Anda Berhasil Registrasi !');
     }
 }

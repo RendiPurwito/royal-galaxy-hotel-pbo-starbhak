@@ -36,7 +36,7 @@
                     <span class="login100-form-title">
                         Login
                     </span>
-                    
+
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                         <input class="input100" type="email" name="email" placeholder="Email">
                         <span class="focus-input100"></span>
@@ -68,12 +68,12 @@
                         </a>
                     </div> --}}
 
-                    {{-- <div class="text-center p-t-136">
-                        <a class="txt2" href="#">
+                    <div class="text-center mt-2">
+                        <a class="txt2 text-primary" href="/register">
                             Create your Account
                             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
-                    </div> --}}
+                    </div>
                 </form>
             </div>
         </div>
