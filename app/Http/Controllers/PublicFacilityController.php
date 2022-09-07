@@ -10,7 +10,7 @@ class PublicFacilityController extends Controller
 {
     public function index(){
         return view('admin.public-facility.index',[
-            'public_facility' => PublicFacility::all(),
+            'public_facility' => PublicFacility::all()->sortByDesc('created_at')
         ]);
     }
 
