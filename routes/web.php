@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\PublicFacilityController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RoomFacilityController;
+use App\Http\Controllers\PublicFacilityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Route::get('/', function () {
 });
 
 Route::get('/admin/dashboard',[AdminController::class,'index']);
+
+Route::get('/login',[LoginController::class,'index']);
+Route::post('/login',[LoginController::class,'authenticate']);
 
 Route::get('/admin/room-facility',[RoomFacilityController::class,'index'])->name('room-facility');
 Route::get('/admin/room-facility/create',[RoomFacilityController::class,'create']);
