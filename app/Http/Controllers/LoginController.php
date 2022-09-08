@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index(){
+    public function indexLogin(){
         return view('auth.login');
     }
 
@@ -20,8 +21,13 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($credentials)){
-            $request->session()->regenerate();
-            return redirect()->intended('/admin/dashboard');
+            if(auth()->user()->role == 'admin'){
+                $request->session()->regenerate();
+                return redirect()->intended('/admin/dashboard');
+            }else{
+                $request->session()->regenerate();
+                return redirect()->intended('/receptionist/dashboard');
+            }
         }
 
         return back()->with('loginError','Login Failed!');
@@ -29,10 +35,30 @@ class LoginController extends Controller
 
     public function logout(Request $request){
         auth::logout();
-
+        
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
+    }
+
+    public function indexRegister(){
+        return view('auth.register');
+    }
+
+    public function storeRegister(Request $request){
+
+        $validatedData = $this->validate($request,[
+            'name' => ['required'],
+            'role' => ['required'],
+            'username' => ['required'],
+            'email' => ['required'],
+            'password' => ['required']
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+        User::create($validatedData);
+
+        return redirect()->route('login')->with('Success','Anda Berhasil Registrasi !');
     }
 }
