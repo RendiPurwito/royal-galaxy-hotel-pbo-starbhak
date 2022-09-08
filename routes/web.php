@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RoomController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\RoomFacilityController;
-use App\Http\Controllers\PublicFacilityController;
-use App\Http\Controllers\ReceptionistBookingController;
+use App\Http\Controllers\Backend\RoomController;
+use App\Http\Controllers\Backend\LoginController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Backend\BookingController;
+use App\Http\Controllers\Backend\RegisterController;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\RoomFacilityController;
+use App\Http\Controllers\Backend\PublicFacilityController;
+use App\Http\Controllers\Backend\ReceptionistBookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,21 +22,37 @@ use App\Http\Controllers\ReceptionistBookingController;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.main');
-});
+// Route::get('/', function () {
+//     return view('layout.main');
+// });
+
+
+// FrontEnd
+
+Route::get('/',[HomeController::class,'index']);
+
+
+
+
+
+
+
+
+
+
+
+
+// BackEnd
 
 Route::get('/admin/dashboard',[DashboardController::class,'indexAdmin'])->middleware('admin');
 Route::get('/receptionist/dashboard',[DashboardController::class,'indexReceptionist'])->middleware('receptionist');
 
-Route::get('/login',[LoginController::class,'indexLogin'])->name('login');
-Route::post('/login',[LoginController::class,'authenticate']);
+Route::get('/login',[LoginController::class,'indexLogin'])->name('login')->middleware('guest');
+Route::post('/login',[LoginController::class,'authenticate'])->middleware('guest');
 Route::post('/logout',[LoginController::class,'logout']);
 
-Route::get('/register',[LoginController::class,'indexRegister'])->name('register');
-Route::post('/register',[LoginController::class,'storeRegister']);
-
-
+Route::get('/register',[LoginController::class,'indexRegister'])->name('register')->middleware('guest');
+Route::post('/register',[LoginController::class,'storeRegister'])->middleware('guest');
 
 Route::get('/admin/user',[RegisterController::class,'index'])->name('user')->middleware('admin');
 Route::get('/admin/user/create',[RegisterController::class,'create'])->middleware('admin');

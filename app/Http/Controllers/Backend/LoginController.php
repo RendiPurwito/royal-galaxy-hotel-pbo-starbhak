@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -21,12 +21,18 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($credentials)){
+    
             if(auth()->user()->role == 'admin'){
                 $request->session()->regenerate();
                 return redirect()->intended('/admin/dashboard');
-            }else{
+
+            }else if(auth()->user()->role == 'receptionist'){
                 $request->session()->regenerate();
                 return redirect()->intended('/receptionist/dashboard');
+
+            }else{
+                $request->session()->regenerate();
+                return redirect()->intended('/');
             }
         }
 

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Models\PublicFacility;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class PublicFacilityController extends Controller
