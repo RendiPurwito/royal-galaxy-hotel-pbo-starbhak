@@ -17,7 +17,7 @@
                 </select>
             </div>
             <div class="mb-4">
-                <label for="room_id" class="form-label">Name</label>
+                <label for="room_id" class="form-label">Room Type</label>
                 <select class="form-select" name="room_id" id="room_id">
                     @foreach ($room as $row)
                     <option value="{{ $row->id }}">{{ $row->room_type }}</option>

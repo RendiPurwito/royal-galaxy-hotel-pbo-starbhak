@@ -30,6 +30,9 @@ use App\Http\Controllers\Backend\ReceptionistBookingController;
 // FrontEnd
 
 Route::get('/',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'index']);
+
 
 
 
