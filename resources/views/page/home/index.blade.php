@@ -83,22 +83,37 @@
 
     @auth
     <div class="container bg-white border border-dark rounded p-3 mb-5" style="margin-top:-100px; z-index:5; position:relative">
-        <form action="">
+        <form action="/booking" method="POST">
             <div class="row">
+                <div class="col-2">
+                    <label for="user_id" class="form-label">Name</label>
+                <select class="form-select" name="user_id" id="user_id">
+                    @foreach ($user as $row)
+                    <option value="{{ $row->id }}">{{ $row->name }}</option>
+                    @endforeach
+                </select>
+                </div>
                 <div class="col-2">
                     <label for="room_id" class="form-label">Room Type</label>
                     <select class="form-select" name="room_id" id="room_id">
-                        <option value="Deluxe">Deluxe</option>
+                        @foreach ($room as $row)
+                        <option value="{{ $row->id }}">{{ $row->room_type }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-2">
-                    <label for="jumlah" class="form-label">Jumlah</label>
-                    <select class="form-select" name="jumlah" id="jumlah">
+                    <label for="qty" class="form-label">Qty</label>
+                    <select class="form-select" name="qty" id="qty">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
                     </select>
                 </div>
                 <div class="col-3">
@@ -108,6 +123,10 @@
                 <div class="col-3">
                     <label for="check_out" class="form-label">Check Out</label>
                     <input type="date" class="form-control" id="check_out" name="check_out" autocomplete="off">
+                </div>
+                <div class="col-2">
+                    <label for="total_payment" class="form-label">Total Payment</label>
+                    <input type="text" class="form-control" id="total_payment" name="total_payment" autocomplete="off">
                 </div>
                 <div class="col-2">
                     <a href="" class="btn btn-primary" style="margin-top:32px">Book Now</a>

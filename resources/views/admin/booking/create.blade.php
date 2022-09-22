@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h4 class="fw-bold">Create Data Room Facility</h4>
+        <h4 class="fw-bold">Create Booking/h4>
     </div>
     <div class="card-body">
         <form action="/admin/booking" method="POST">
