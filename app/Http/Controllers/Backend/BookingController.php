@@ -76,9 +76,14 @@ class BookingController extends Controller
 
     public function filter(Request $request){
         if (request()->dari || request()->sampai) {
+            // $dari = explode('-', request('dari'));
+            // $dari = $dari[0]. '-' . $dari[1] . '-' . intval($dari[2]) + 1;
+
             $sampai = explode('-', request('sampai'));
-            $sampai = $sampai[0]. '-' . $sampai[1] . '-' . intval($sampai[2]) + 1;
-            $booking = Booking::whereBetween('created_at',[request('dari'), $sampai])->get();
+            $sampai = $sampai[0]. '-' . $sampai[1] . '-' . intval($sampai[2]);
+            
+            $booking = Booking::whereBetween('check_in',[request('dari'), $sampai])->whereBetween('check_out',[request('dari'), $sampai])->get();
+            // $booking = Booking::whereBetween('check_in',request('dari'))->whereBetweer('check_out',$sampai)->get();
         } else {
             $booking = Booking::latest()->get();
         }

@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Booking</h4>
-                <a href="/admin/booking/create" class="btn btn-primary btn-sm float-right mr-5 px-4">Create</a>
+                <a href="/receptionist/booking/create" class="btn btn-primary btn-sm float-right mr-5 px-4">Create</a>
               </div>
               <div class="card-content">
                 <div class="card-body">
@@ -28,8 +28,8 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
 <td>
-    <a href="/admin/booking/{{ $row->id }}/edit" class="btn btn-warning btn-sm px-4 mb-1">Edit</a>
-    <a href="/admin/booking/{{ $row->id }}" class="btn btn-danger btn-sm px-4">Delete</a>
+    <a href="/receptionist/booking/{{ $row->id }}/edit" class="btn btn-warning btn-sm px-4 mb-1">Edit</a>
+    <a href="/receptionist/booking/{{ $row->id }}" class="btn btn-danger btn-sm px-4">Delete</a>
 </td>
 <td>{{ $row->user->name }}</td>
 <td>{{ $row->room->room_type }}</td>
@@ -65,10 +65,11 @@
 <div class="card">
     <div class="card-header">
         BOOKING DATA
-        <a href="/admin/booking/create" class="btn btn-outline-primary btn-sm float-right ml-3">Create</a>
-        <button type="button" class="btn btn-outline-primary float-right" data-toggle="modal" data-target="#inlineForm">
+        <a href="/admin/booking/create" class="btn btn-primary btn-sm float-right ml-3">Create</a>
+        <button type="button" class="btn btn-success float-right ml-3" data-toggle="modal" data-target="#inlineForm">
             Filter Tanggal
         </button>
+        <a href="/admin/booking" class="btn btn-secondary btn-sm px-4 text-white float-right">Refresh</a>
     </div>
     <div class="card-body">
         <table class='table table-striped' id="table1">
@@ -94,7 +95,7 @@
                     <td>{{ $row->check_in }}</td>
                     <td>{{ $row->check_out }}</td>
                     <td>{{ $row->total_payment }}</td>
-                    <td>
+                    <td >
                         <a href="/admin/booking/{{ $row->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                         <a href="/admin/booking/{{ $row->id }}" class="btn btn-danger btn-sm">Delete</a>
                     </td>
@@ -134,10 +135,11 @@
                         <i class="bx bx-x d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Close</span>
                     </button>
-                    <button type="button" class="btn btn-primary ml-1" data-dismiss="modal" type="submit">
+                    {{-- <button type="button" class="btn btn-primary ml-1" data-dismiss="modal" type="submit">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Submit</span>
-                    </button>
+                    </button> --}}
+                    <button type="submit" class="btn btn-primary ml-1">Submit</button>
                 </div>
             </form>
         </div>
