@@ -25,6 +25,10 @@
                 </select>
             </div>
             <div class="mb-4">
+                <label for="qty" class="form-label">Qty</label>
+                <input type="text" class="form-control" id="qty" name="qty" autocomplete="off">
+            </div>
+            <div class="mb-4">
                 <label for="check_in" class="form-label">Check In</label>
                 <input type="date" class="form-control" id="check_in" name="check_in" autocomplete="off">
             </div>
@@ -36,6 +40,7 @@
                 <label for="total_payment" class="form-label">Total Payment</label>
                 <input type="text" class="form-control" id="total_payment" name="total_payment" autocomplete="off">
             </div>
+            
             <button type="submit" class="btn btn-primary float-right">Submit</button>
         </form>
     </div>

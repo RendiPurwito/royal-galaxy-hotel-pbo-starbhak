@@ -18,9 +18,9 @@
 <body>
     <div class="hero mb-5">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
-            <div class="container d-flex">
+            <div class="container-fluid d-flex">
                 <a class="navbar-brand" href="#">
-                    <img src="/image/logo.jpeg" alt="" width="60" height="60" class="d-inline-block align-text-center">
+                    <img src="/image/logo.jpeg" alt="" width="50" height="50" class="d-inline-block align-text-center">
                     Royal Galaxy
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -50,26 +50,19 @@
                         </li>
                     </ul>
                     @else
-                    <a href="/login" type="button" class="btn btn-primary float-end">Login</a>
+                    <a href="/login" type="button" class="btn btn-primary float-end px-4 btn-sm me-2">Login</a>
                     @endauth
                 </div>
             </div>
         </nav>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner" style="height:90vh">
+            
+            <div class="carousel-inner" style="height:100vh">
                 <div class="carousel-item active">
-                    <img src="/image/hotel.jpg" class="d-block w-100 img" alt="...">
+                    <img src="/image/1.jpg" class="d-block w-100 img" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="/image/swimming-pool-765312.jpg" class="d-block w-100 img" alt="...">
+                    <img src="/image/2.jpg" class="d-block w-100 img" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="/image/receptionists-5975962_1920.jpg" class="d-block w-100 img" alt="...">
@@ -124,26 +117,22 @@
     </div>
     @endauth
 
-    {{-- <div class="about-us container d-flex mb-5">
-        <div class="hotel-desc w-50 ms-4">
+    <div class="about-us container d-flex mb-5 justify-content-center">
+        <div class="hotel-desc  text-center">
             <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ducimus, amet quisquam aut quaerat
-                voluptates. Excepturi labore odio quaerat, repellendus, cupiditate suscipit nobis sunt impedit
-                necessitatibus temporibus molestiae atque cum?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nobis magnam nesciunt corporis provident qui pariatur fuga ducimus, ipsum tempore vitae error, minima, fugit iste ipsam dolorum assumenda rerum. Deleniti voluptatum iure doloribus dolorem aperiam. Explicabo dolores corporis ullam consectetur, mollitia quisquam cum modi similique iusto nisi aut optio, molestias neque eaque non? Numquam, dignissimos? Ratione itaque nam harum magnam animi officia porro, sunt ex.</p>
+           
         </div>
-        <div class="hotel-picture w-50 ms-5">
-            <img src="/image/hotel.jpg" alt="" class="w-75">
-        </div>
-    </div> --}}
+    </div>
 
     <div class="container mb-5">
-        <h2 class="text-center">Rooms</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-5">
-                <img src="/image/hotel.jpg" alt="..." style="width:100%;">
+        <h2 class="text-center mb-4">Rooms</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/image/superior.jpg" class="shadow img-fluid" >
             </div>
-            <div class="col-md-5 offset-2">
-                <img src="/image/hotel.jpg" class="img-fluid" alt="...">
+            <div class="col-md-6">
+                <img src="/image/deluxe.jpg" class=" shadow img-fluid" >
             </div> 
         </div>
     </div>

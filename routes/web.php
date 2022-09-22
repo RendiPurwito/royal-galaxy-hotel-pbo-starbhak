@@ -31,8 +31,7 @@ use App\Http\Controllers\Backend\ReceptionistBookingController;
 // Route::get('user/index', function(){
 //     return view('user.index');
 // });
-Route::get('/index',[UserBookingController::class,'index']);
-Route::get('/booking',[HomeController::class,'index']);
+
 Route::get('/',[HomeController::class,'index']);
 
 
@@ -93,10 +92,13 @@ Route::post('/admin/booking',[BookingController::class,'store'])->middleware('ad
 Route::get('/admin/booking/{id}/edit',[BookingController::class,'edit'])->middleware('admin');
 Route::post('/admin/booking/{id}',[BookingController::class,'update'])->middleware('admin');
 Route::get('/admin/booking/{id}',[BookingController::class,'destroy'])->middleware('admin');
+Route::get('/admin/booking/filter',[BookingController::class,'filter'])->middleware('admin');
 
 Route::get('/receptionist/booking',[ReceptionistBookingController::class,'index'])->name('bookingReceptionist')->middleware('receptionist');
 Route::get('/receptionist/booking/create',[ReceptionistBookingController::class,'create'])->middleware('receptionist');
+Route::get('/receptionist/booking/filter',[ReceptionistBookingController::class,'filter'])->middleware('receptionist');
 Route::post('/receptionist/booking',[ReceptionistBookingController::class,'store'])->middleware('receptionist');
 Route::get('/receptionist/booking/{id}/edit',[ReceptionistBookingController::class,'edit'])->middleware('receptionist');
 Route::post('/receptionist/booking/{id}',[ReceptionistBookingController::class,'update'])->middleware('receptionist');
 Route::get('/receptionist/booking/{id}',[ReceptionistBookingController::class,'destroy'])->middleware('receptionist');
+
