@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('room_id');
-            $table->string('jumlah');
+            $table->string('qty');
             $table->date('check_in');
             $table->date('check_out');
             $table->string('total_payment');

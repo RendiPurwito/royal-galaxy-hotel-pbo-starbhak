@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/voler/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="/voler/dist/assets/css/app.css">
     <link rel="shortcut icon" href="/voler/dist/assets/images/favicon.svg" type="image/x-icon">
+    @yield('css')
 </head>
 
 <body>
@@ -61,7 +62,7 @@
                             </li>
                         @endcan
                         @can('receptionist')
-                            <li class="sidebar-item {{ Request::is('admin/dashboard*') ? 'active' : '' }} ">
+                            <li class="sidebar-item {{ Request::is('receptionist/dashboard*') ? 'active' : '' }} ">
                                 <a href="/receptionist/dashboard" class='sidebar-link'>
                                     <i data-feather="home" width="20"></i>
                                     <span>Dashboard</span>
@@ -142,6 +143,8 @@
     <script src="/voler/dist/assets/js/pages/dashboard.js"></script>
 
     <script src="/voler/dist/assets/js/main.js"></script>
+
+    @yield('javascript')
 </body>
 
 </html>

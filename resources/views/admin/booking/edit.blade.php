@@ -25,6 +25,10 @@
                 </select>
             </div>
             <div class="mb-4">
+                <label for="qty" class="form-label">Total Payment</label>
+                <input type="text" class="form-control" id="qty" name="qty" autocomplete="off" value="{{ $booking->qty }}">
+            </div>
+            <div class="mb-4">
                 <label for="check_in" class="form-label">Check In</label>
                 <input type="date" class="form-control" id="check_in" name="check_in" autocomplete="off" value="{{ $booking->check_in }}">
             </div>

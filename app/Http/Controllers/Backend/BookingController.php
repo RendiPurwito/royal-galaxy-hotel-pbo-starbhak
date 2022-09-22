@@ -38,6 +38,7 @@ class BookingController extends Controller
             'check_in' => ['required'],
             'check_out' => ['required'],
             'total_payment' => ['required'],
+            'qty' => ['required'],
         ]);
 
         Booking::create($validasi);
@@ -58,7 +59,8 @@ class BookingController extends Controller
             'room_id' => ['required'],
             'check_in' => ['required'],
             'check_out' => ['required'],
-            'total_payment' => ['required']
+            'total_payment' => ['required'],
+            'qty' => ['required'],
         ]);
 
         Booking::where('id',$id)->update($validasi);
@@ -70,5 +72,19 @@ class BookingController extends Controller
         $booking->delete();
 
         return redirect('/admin/booking')->with('Delete','Data berhasil di hapus!');
+    }
+
+    public function filter(Request $request){
+        if (request()->dari || request()->sampai) {
+            $sampai = explode('-', request('sampai'));
+            $sampai = $sampai[0]. '-' . $sampai[1] . '-' . intval($sampai[2]) + 1;
+            $booking = Booking::whereBetween('created_at',[request('dari'), $sampai])->get();
+        } else {
+            $booking = Booking::latest()->get();
+        }
+
+        return view('admin.booking.index',[
+            'booking' => $booking
+        ]);
     }
 }
