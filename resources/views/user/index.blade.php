@@ -8,16 +8,11 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    {{-- <style>
-        *{
-            border: 1px solid;
-        }
-    </style> --}}
 </head>
 
 <body>
     <div class="hero mb-5">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container d-flex">
                 <a class="navbar-brand" href="#">
                     <img src="/image/logo.jpeg" alt="" width="60" height="60" class="d-inline-block align-text-center">
@@ -31,27 +26,11 @@
                     <a class="nav-link active text-secondary" aria-current="page" href="/">Home</a>
                     <a class="nav-link text-secondary" href="/rooms">Rooms</a>
                     <a class="nav-link flex-fill text-secondary" href="/facilities">Facilities</a>
-                    @auth
-                    <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown"
-                                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                                <div class="d-none d-md-block d-lg-inline-block">Hi, {{ auth()->user()->username }}
-                                </div>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                {{-- <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a> --}}
-                                <form action="/logout" method="post" class="form-class">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item"><i
-                                            data-feather="log-out"></i>Logout</button>
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
-                    @else
-                    <a href="/login" type="button" class="btn btn-primary float-end">Login</a>
-                    @endauth
+                    <form action="/logout" method="post" class="form-class">
+                        @csrf
+                        <button type="submit" class="btn btn-danger"><i
+                                data-feather="log-out"></i>Logout</button>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -88,42 +67,6 @@
         </div>
     </div>
 
-    @auth
-    <div class="container bg-white border border-dark rounded p-3 mb-5" style="margin-top:-100px; z-index:5; position:relative">
-        <form action="">
-            <div class="row">
-                <div class="col-2">
-                    <label for="room_id" class="form-label">Room Type</label>
-                    <select class="form-select" name="room_id" id="room_id">
-                        <option value="Deluxe">Deluxe</option>
-                    </select>
-                </div>
-                <div class="col-2">
-                    <label for="jumlah" class="form-label">Jumlah</label>
-                    <select class="form-select" name="jumlah" id="jumlah">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <div class="col-3">
-                    <label for="check_in" class="form-label">Check In</label>
-                    <input type="date" class="form-control" id="check_in" name="check_in" autocomplete="off">
-                </div>
-                <div class="col-3">
-                    <label for="check_out" class="form-label">Check Out</label>
-                    <input type="date" class="form-control" id="check_out" name="check_out" autocomplete="off">
-                </div>
-                <div class="col-2">
-                    <a href="" class="btn btn-primary" style="margin-top:32px">Book Now</a>
-                </div>
-            </div>
-        </form>
-    </div>
-    @endauth
-
     {{-- <div class="about-us container d-flex mb-5">
         <div class="hotel-desc w-50 ms-4">
             <h3>About Us</h3>
@@ -137,21 +80,22 @@
     </div> --}}
 
     <div class="container mb-5">
-        <h2 class="text-center">Rooms</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-5">
-                <img src="/image/hotel.jpg" alt="..." style="width:100%;">
+        <div class="col-4">
+            <div class="card" style="width: 20rem;">
+                <img src="/image/hotel.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
             </div>
-            <div class="col-md-5 offset-2">
-                <img src="/image/hotel.jpg" class="img-fluid" alt="...">
-            </div> 
         </div>
     </div>
 
     <div class="facilities container mb-5">
         <h2 class="text-center mb-4">Facility</h2>
         <div class="f-body d-flex justify-content-evenly">
-            <div class="card" style="width: 23rem;">
+            <div class="card" style="width: 20rem;">
                 <img src="/image/cafe.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -159,15 +103,15 @@
                         card's content.</p>
                 </div>
             </div>
-            <div class="card" style="width: 23rem;">
-                <img src="/image/library.jpg" class="card-img-top" alt="..." style="height: 15.3rem;">
+            <div class="card" style="width: 20rem;">
+                <img src="/image/library.jpg" class="card-img-top" alt="..." style="height: 13rem;">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
                 </div>
             </div>
-            <div class="card" style="width: 23rem;">
+            <div class="card" style="width: 20rem;">
                 <img src="/image/swimming-pool.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -178,45 +122,10 @@
         </div>
     </div>
 
-    {{-- <div class="container">
-        <div class="row">
-            <div class="col-md-4 d-flex justify-content-center ">
-                <div class="card" style="width: 20rem;">
-                    <img src="/image/cafe.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center ">
-                    <div class="card" style="width: 20rem;">
-                        <img src="/image/library.jpg" class="card-img-top" alt="..." style="height: 13rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center ">
-                    <div class="card" style="width: 20rem;">
-                        <img src="/image/swimming-pool.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
     {{-- GMaps --}}
     <div class="location container mb-5 text-center">
         <h2 class="mb-4">Location</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2034969634324!2d106.82652621406348!3d-6.23688679548534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e7f183d3fd%3A0xf2f89088c7d7440c!2sJl.%20Gatot%20Subroto%20No.Kav%2018%2C%20RT.9%2FRW.4%2C%20Kuningan%20Tim.%2C%20Kecamatan%20Setiabudi%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012950!5e0!3m2!1sid!2sid!4v1663809347612!5m2!1sid!2sid" width="1100" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2034969634324!2d106.82652621406348!3d-6.23688679548534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e7f183d3fd%3A0xf2f89088c7d7440c!2sJl.%20Gatot%20Subroto%20No.Kav%2018%2C%20RT.9%2FRW.4%2C%20Kuningan%20Tim.%2C%20Kecamatan%20Setiabudi%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012950!5e0!3m2!1sid!2sid!4v1663809347612!5m2!1sid!2sid" width="1040" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     {{-- Footer --}}
@@ -304,15 +213,6 @@
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/voler/dist/assets/js/feather-icons/feather.min.js"></script>
-    <script src="/voler/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="/voler/dist/assets/js/app.js"></script>
-
-    <script src="/voler/dist/assets/vendors/chartjs/Chart.min.js"></script>
-    <script src="/voler/dist/assets/vendors/apexcharts/apexcharts.min.js"></script>
-    <script src="/voler/dist/assets/js/pages/dashboard.js"></script>
-
-    <script src="/voler/dist/assets/js/main.js"></script>
 </body>
 
 </html>

@@ -28,9 +28,11 @@ use App\Http\Controllers\Backend\ReceptionistBookingController;
 
 
 // FrontEnd
-
-Route::get('/',[HomeController::class,'index']);
-Route::get('/',[HomeController::class,'index']);
+// Route::get('user/index', function(){
+//     return view('user.index');
+// });
+Route::get('/index',[UserBookingController::class,'index']);
+Route::get('/booking',[HomeController::class,'index']);
 Route::get('/',[HomeController::class,'index']);
 
 
