@@ -65,10 +65,11 @@
 <div class="card">
     <div class="card-header">
         BOOKING DATA
-        <a href="/receptionist/booking/create" class="btn btn-outline-primary btn-sm float-right ml-3">Create</a>
-        <button type="button" class="btn btn-outline-primary float-right" data-toggle="modal" data-target="#inlineForm">
+        <a href="/receptionist/booking/create" class="btn btn-primary btn-sm float-right ml-3">Create</a>
+        <button type="button" class="btn btn-success float-right ml-3" data-toggle="modal" data-target="#inlineForm">
             Filter Tanggal
         </button>
+        <a href="/receptionist/booking" class="btn btn-secondary btn-sm px-4 text-white float-right">Refresh</a>
     </div>
     <div class="card-body">
         <table class='table table-striped' id="table1">
