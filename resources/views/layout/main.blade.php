@@ -100,7 +100,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 {{-- <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a> --}}
-                                <form action="/logout" method="post" class="form-class">
+                                <form action="/logout" method="post" class="form-class p-0">
                                     @csrf
                                     <button type="submit" class="dropdown-item"><i
                                             data-feather="log-out"></i>Logout</button>

@@ -37,7 +37,7 @@ class BookingController extends Controller
             'room_id' => ['required'],
             'check_in' => ['required'],
             'check_out' => ['required'],
-            'total_pembayaran' => ['required'],
+            'total_payment' => ['required'],
         ]);
 
         Booking::create($validasi);
@@ -58,7 +58,7 @@ class BookingController extends Controller
             'room_id' => ['required'],
             'check_in' => ['required'],
             'check_out' => ['required'],
-            'total_pembayaran' => ['required']
+            'total_payment' => ['required']
         ]);
 
         Booking::where('id',$id)->update($validasi);
