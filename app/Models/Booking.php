@@ -26,5 +26,5 @@ class Booking extends Model
         return $this->belongsTo(RoomFacility::class);
     }
 
-
+    
 }

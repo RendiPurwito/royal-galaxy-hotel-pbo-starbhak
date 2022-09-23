@@ -17,7 +17,7 @@
                 </select>
             </div>
             <div class="mb-4">
-                <label for="room_id" class="form-label">Name</label>
+                <label for="room_id" class="form-label">Room Type</label>
                 <select class="form-select" name="room_id" id="room_id">
                     @foreach ($room as $row)
                     <option value="{{ $row->id }}">{{ $row->room_type }}</option>
@@ -25,7 +25,7 @@
                 </select>
             </div>
             <div class="mb-4">
-                <label for="qty" class="form-label">Total Payment</label>
+                <label for="qty" class="form-label">Qty</label>
                 <input type="text" class="form-control" id="qty" name="qty" autocomplete="off" value="{{ $booking->qty }}">
             </div>
             <div class="mb-4">
@@ -36,10 +36,7 @@
                 <label for="check_out" class="form-label">Check Out</label>
                 <input type="date" class="form-control" id="check_out" name="check_out" autocomplete="off" value="{{ $booking->check_out }}">
             </div>
-            <div class="mb-4">
-                <label for="total_payment" class="form-label">Total Payment</label>
-                <input type="text" class="form-control" id="total_payment" name="total_payment" autocomplete="off" value="{{ $booking->total_payment }}">
-            </div>
+
             <button type="submit" class="btn btn-primary float-right">Submit</button>
         </form>
     </div>

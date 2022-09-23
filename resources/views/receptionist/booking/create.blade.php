@@ -36,10 +36,6 @@
                 <label for="check_out" class="form-label">Check Out</label>
                 <input type="date" class="form-control" id="check_out" name="check_out" autocomplete="off">
             </div>
-            <div class="mb-4">
-                <label for="total_payment" class="form-label">Total Payment</label>
-                <input type="text" class="form-control" id="total_payment" name="total_payment" autocomplete="off">
-            </div>
             
             <button type="submit" class="btn btn-primary float-right">Submit</button>
         </form>
