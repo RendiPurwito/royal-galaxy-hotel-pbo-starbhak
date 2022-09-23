@@ -70,6 +70,7 @@
                     <th>ID</th>
                     <th>Room Type</th>
                     <th>Room Facility</th>
+                    <th>Number Of Rooms</th>
                     <th>Price</th>
                     <th>Action</th>
                 </tr>
@@ -80,6 +81,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $row->room_type }}</td>
                     <td>{{ $row->room_facility->facility_name }}</td>
+                    <td>{{ $row->number_of_rooms }}</td>
                     <td>{{ $row->price }}</td>
                     <td>
                         <a href="/admin/room/{{ $row->id }}/edit" class="btn btn-warning btn-sm">Edit</a>

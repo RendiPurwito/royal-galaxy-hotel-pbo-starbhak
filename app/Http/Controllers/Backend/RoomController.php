@@ -28,6 +28,7 @@ class RoomController extends Controller
             'room_type' => ['required'],
             'room_facility_id' => ['required'],
             'price' => ['required'],
+            'number_of_rooms' => ['required'],
         ]);
         Room::create($validasi);
         return redirect()->route('room')->with('success','Data berhasil di Tambah!');
@@ -45,6 +46,7 @@ class RoomController extends Controller
             'room_type' => ['required'],
             'room_facility_id' => ['required'],
             'price' => ['required'],
+            'number_of_rooms' => ['required'],
         ]);
         Room::where('id',$id)->update($validasi);
         return redirect()->route('room')->with('edit','Data berhasil di Ubah!');

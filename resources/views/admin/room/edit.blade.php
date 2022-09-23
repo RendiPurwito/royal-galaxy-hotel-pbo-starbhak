@@ -24,6 +24,10 @@
                 <label for="price" class="form-label">Price</label>
                 <input type="text" class="form-control" id="price" name="price" autocomplete="off" value="{{ $room->price }}">
             </div>
+            <div class="mb-4">
+                <label for="number_of_rooms" class="form-label">Number Of Rooms</label>
+                <input type="text" class="{{ $room->number_of_rooms }}form-control" id="number_of_rooms" name="number_of_rooms" autocomplete="off" value="">
+            </div>
             <button type="submit" class="btn btn-primary float-right">Submit</button>
         </form>
     </div>

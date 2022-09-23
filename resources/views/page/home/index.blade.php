@@ -150,7 +150,7 @@
     <div class="about-us container d-flex mb-5 justify-content-center">
         <div class="hotel-desc text-center mb-5">
             <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus sequi praesentium nam architecto, inventore assumenda alias exercitationem illo dolorem fugiat eveniet delectus aliquid quidem. Ipsum, iure architecto vitae rem velit voluptatibus quas sed quidem suscipit. Nulla amet exercitationem optio nobis, ut blanditiis voluptatum cupiditate recusandae laudantium dolores facere odio aliquid suscipit eaque rerum a, molestias provident ducimus mollitia ipsam magnam incidunt. Dolorum nam ab magni? Quia eligendi, sint ex commodi aut maxime sed vitae voluptas vero, dolorem earum quaerat sit quas accusantium modi quidem perspiciatis. Nulla ut eum odio quas velit, atque, officiis quam nisi et aliquam eaque. Voluptate maiores doloremque quisquam blanditiis officia, illum ullam delectus aliquam labore repudiandae molestias, accusantium animi rem temporibus sint dolores. Fuga eius neque hic sit aspernatur cum perferendis nisi natus a dignissimos sapiente accusantium odio atque consequuntur sunt, molestiae rerum id. Repellendus cum excepturi quasi fugit tenetur doloribus aliquid nam aspernatur. Veritatis nisi unde corporis vitae necessitatibus, iusto dolores labore quisquam, qui rem aperiam fuga facilis exercitationem totam neque doloremque similique nesciunt voluptas officia eligendi mollitia, inventore pariatur. Porro hic doloremque, quis consequuntur commodi assumenda quibusdam animi id possimus at illo expedita eaque. Tenetur sint maxime quisquam nemo veritatis rem quae cumque.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ut, neque perferendis iste excepturi animi quisquam minus, cum earum, necessitatibus rem? Nisi commodi repellendus dolores ipsa nemo at accusamus provident, reprehenderit veritatis! Eveniet optio quam ratione fuga, hic aperiam aliquid eum nostrum harum laborum commodi libero mollitia consectetur aliquam, velit ullam? Recusandae earum numquam perferendis in ea asperiores unde iste.</p>
 
         </div>
     </div>
@@ -196,41 +196,6 @@
             </div>
         </div>
     </div>
-
-    {{-- <div class="container">
-        <div class="row">
-            <div class="col-md-4 d-flex justify-content-center ">
-                <div class="card" style="width: 20rem;">
-                    <img src="/image/cafe.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center ">
-                    <div class="card" style="width: 20rem;">
-                        <img src="/image/library.jpg" class="card-img-top" alt="..." style="height: 13rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center ">
-                    <div class="card" style="width: 20rem;">
-                        <img src="/image/swimming-pool.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
     {{-- GMaps --}}
     <div class="location container mb-5 text-center">
