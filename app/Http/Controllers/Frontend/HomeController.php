@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Room;
 use App\Models\User;
 use App\Models\Booking;
+use App\Models\RoomFacility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -36,6 +37,34 @@ class HomeController extends Controller
         $validasi['total_payment'] = $request->qty * $room->price;
 
         Booking::create($validasi);
-        return redirect('/')->with('success','Data berhasil di tambah!');
+        return redirect('/invoice')->with('success','Data berhasil di tambah!');
     }
+
+    public function invoice(){
+        $booking = Booking::where('user_id',auth()->user()->id)->get();
+        $user = User::all();
+        $room = Room::all();
+        $room_facility = RoomFacility::all();
+        return view('page.home.invoice',[
+            'booking' => $booking,
+            'user' => $user,
+            'room' => $room,
+            'room_facility' => $room_facility
+        ]);
+    }
+
+    public function print(){
+        $booking = Booking::all();
+        $user = User::all();
+        $room = Room::all();
+        $room_facility = RoomFacility::all();
+        return view('page.home.invoice-print',[
+            'booking' => $booking,
+            'user' => $user,
+            'room' => $room,
+            'room_facility' => $room_facility
+        ]);
+    }
+
+    
 }

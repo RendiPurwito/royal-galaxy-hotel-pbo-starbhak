@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Backend\RoomController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -34,6 +35,11 @@ use App\Http\Controllers\Backend\ReceptionistBookingController;
 
 Route::get('/',[HomeController::class,'index']);
 Route::post('/booking',[HomeController::class,'store']);
+Route::get('/invoice',[HomeController::class,'invoice']);
+Route::get('/invoice-print',[HomeController::class,'print']);
+Route::get('/redirect-to-previous-url', function(){
+    return Redirect::to(url()->previous());
+});
 
 
 

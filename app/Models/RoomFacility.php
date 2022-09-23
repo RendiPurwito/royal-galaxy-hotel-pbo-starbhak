@@ -14,4 +14,9 @@ class RoomFacility extends Model
     protected function room(){
         return $this->hasMany(Room::class);
     }
+
+    protected function invoice(){
+        return $this->hasMany(Booking::class);
+    }
+
 }

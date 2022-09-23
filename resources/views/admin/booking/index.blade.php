@@ -89,6 +89,7 @@
                 @foreach ($booking as $row)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
+                    <td>{{ $row->booking_number }}</td>
                     <td>{{ $row->user->name }}</td>
                     <td>{{ $row->room->room_type }}</td>
                     <td>{{ $row->qty }}</td>
