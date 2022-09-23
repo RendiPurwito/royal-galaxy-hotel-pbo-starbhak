@@ -94,7 +94,7 @@
                     <td>{{ $row->qty }}</td>
                     <td>{{ $row->check_in }}</td>
                     <td>{{ $row->check_out }}</td>
-                    <td>{{ $row->total_payment }}</td>
+                    <td>${{ $row->total_payment }}</td>
                     <td >
                         <a href="/receptionist/booking/{{ $row->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                         <a href="/receptionist/booking/{{ $row->id }}" class="btn btn-danger btn-sm">Delete</a>

@@ -33,6 +33,7 @@ use App\Http\Controllers\Backend\ReceptionistBookingController;
 // });
 
 Route::get('/',[HomeController::class,'index']);
+Route::post('/booking',[HomeController::class,'store']);
 
 
 
@@ -55,7 +56,7 @@ Route::get('/login',[LoginController::class,'indexLogin'])->name('login')->middl
 Route::post('/login',[LoginController::class,'authenticate'])->middleware('guest');
 Route::post('/logout',[LoginController::class,'logout']);
 
-Route::post('/booking',[HomeController::class,'booking']);
+
 
 Route::get('/register',[LoginController::class,'indexRegister'])->name('register')->middleware('guest');
 Route::post('/register',[LoginController::class,'storeRegister'])->middleware('guest');

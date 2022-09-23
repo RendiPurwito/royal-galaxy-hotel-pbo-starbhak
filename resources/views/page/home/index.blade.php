@@ -8,11 +8,15 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    {{-- <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
         *{
-            border: 1px solid;
+            /* border: 1px solid; */
+            font-family: 'Poppins', sans-serif;
         }
-    </style> --}}
+    </style>
 </head>
 
 <body>
@@ -30,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <a class="nav-link active text-secondary" aria-current="page" href="/">Home</a>
                     <a class="nav-link text-secondary" href="/rooms">Rooms</a>
-                    <a class="nav-link flex-fill text-secondary" href="/facilities">Facilities</a>
+                    <a class="nav-link text-secondary" href="/facilities">Facilities</a>
                     @auth
                     <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
                         <li class="dropdown">
@@ -50,7 +54,7 @@
                         </li>
                     </ul>
                     @else
-                    <a href="/login" type="button" class="btn btn-primary float-end px-4 btn-sm me-2">Login</a>
+                    <a href="/login" type="button" class="btn btn-dark ms-auto px-4 btn-sm me-2">Login</a>
                     @endauth
                 </div>
             </div>
@@ -82,28 +86,24 @@
     </div>
 
     @auth
-    <div class="container bg-white border border-dark rounded p-3 mb-5" style="margin-top:-100px; z-index:5; position:relative">
-        <form action="/booking" method="POST">
+    <div class="container bg-white shadow rounded p-3 mb-5 py-4" style="margin-top:-87px; z-index:5; position:relative">
+        <form action="/booking" method="POST" class="text-center">
+            @csrf
             <div class="row">
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="col-2">
-                    <label for="user_id" class="form-label">Name</label>
-                <select class="form-select" name="user_id" id="user_id">
-                    @foreach ($user as $row)
-                    <option value="{{ $row->id }}">{{ $row->name }}</option>
-                    @endforeach
-                </select>
-                </div>
-                <div class="col-2">
-                    <label for="room_id" class="form-label">Room Type</label>
+                    {{-- <label for="room_id" class="form-label">Room Type</label> --}}
                     <select class="form-select" name="room_id" id="room_id">
+                        <option disabled selected hidden>Room Type</option>
                         @foreach ($room as $row)
-                        <option value="{{ $row->id }}">{{ $row->room_type }}</option>
+                            <option value="{{ $row->id }}">{{ $row->room_type }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="col-2">
-                    <label for="qty" class="form-label">Qty</label>
+                    {{-- <label for="qty" class="form-label">Qty</label> --}}
                     <select class="form-select" name="qty" id="qty">
+                        <option disabled selected hidden>Qty</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -117,23 +117,23 @@
                     </select>
                 </div>
                 <div class="col-3">
-                    <label for="check_in" class="form-label">Check In</label>
-                    <input type="date" class="form-control" id="check_in" name="check_in" autocomplete="off">
+                    {{-- <label for="check_in" class="form-label">Check In</label> --}}
+                    <input type="text" class="form-control" id="check_in" name="check_in" autocomplete="off" placeholder="Check In" onfocus="(this.type='date')">
                 </div>
                 <div class="col-3">
-                    <label for="check_out" class="form-label">Check Out</label>
-                    <input type="date" class="form-control" id="check_out" name="check_out" autocomplete="off">
+                    {{-- <label for="check_out" class="form-label">Check Out</label> --}}
+                    <input type="text" class="form-control" id="check_out" name="check_out" autocomplete="off" placeholder="Check Out" onfocus="(this.type='date')">
                 </div>
-                <div class="col-2">
+                {{-- <div class="col-2">
                     <label for="total_payment" class="form-label">Total Payment</label>
                     <input type="text" class="form-control" id="total_payment" name="total_payment" autocomplete="off">
-                </div>
-                <div class="col-2">
-                    <a href="" class="btn btn-primary" style="margin-top:32px">Book Now</a>
+                </div> --}}
+                <div class="col-2 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-dark px-4">Book Now</button>
                 </div>
             </div>
         </form>
-    </div>
+    </div> 
     @endauth
 
     <div class="about-us container d-flex mb-5 justify-content-center">
