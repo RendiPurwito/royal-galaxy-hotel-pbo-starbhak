@@ -21,7 +21,30 @@ class HomeController extends Controller
         ]);
     }
 
-    
+ 
+
+    function GenerateCode()
+    {
+
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersNumber = strlen($characters);
+        $codeLength = 6;
+
+        $code = '';
+
+        while (strlen($code) < 6) {
+            $position = rand(0, $charactersNumber - 1);
+            $character = $characters[$position];
+            $code = $code.$character;
+        }
+
+        if (Booking::where('booking_code', $code)->exists()) {
+            $this->GenerateCode();
+        }
+
+        return $code;
+    }
+
 
     public function store(Request $request){
         $validasi = $this->validate($request,[
@@ -35,6 +58,7 @@ class HomeController extends Controller
         $room = Room::where('id',$request->room_id)->first();
 
         $validasi['total_payment'] = $request->qty * $room->price;
+        $validasi['booking_code'] = $this->GenerateCode();
 
         Booking::create($validasi);
         return redirect('/invoice')->with('success','Data berhasil di tambah!');

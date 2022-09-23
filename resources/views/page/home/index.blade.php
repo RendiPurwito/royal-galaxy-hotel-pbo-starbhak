@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,16 +8,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Landing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <style>
-        *{
+        * {
             /* border: 1px solid; */
             font-family: 'Poppins', sans-serif;
         }
+
     </style>
 </head>
 
@@ -37,7 +41,7 @@
                     <a class="nav-link text-secondary" href="/rooms">Rooms</a>
                     <a class="nav-link text-secondary" href="/facilities">Facilities</a>
                     @auth
-                    <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+                    <ul class="navbar-nav d-flex ms-auto align-items-center navbar-light ml-auto">
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown"
                                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
@@ -60,8 +64,8 @@
                 </div>
             </div>
         </nav>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
             <div class="carousel-inner" style="height:100vh">
                 <div class="carousel-item active">
                     <img src="/image/1.jpg" class="d-block w-100 img" alt="...">
@@ -92,12 +96,13 @@
             @csrf
             <div class="row">
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+
                 <div class="col-2">
                     {{-- <label for="room_id" class="form-label">Room Type</label> --}}
                     <select class="form-select" name="room_id" id="room_id">
                         <option disabled selected hidden>Room Type</option>
                         @foreach ($room as $row)
-                            <option value="{{ $row->id }}">{{ $row->room_type }}</option>
+                        <option value="{{ $row->id }}">{{ $row->room_type }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -119,11 +124,13 @@
                 </div>
                 <div class="col-3">
                     {{-- <label for="check_in" class="form-label">Check In</label> --}}
-                    <input type="text" class="form-control" id="check_in" name="check_in" autocomplete="off" placeholder="Check In" onfocus="(this.type='date')">
+                    <input type="text" class="form-control" id="check_in" name="check_in" autocomplete="off"
+                        placeholder="Check In" onfocus="(this.type='date')">
                 </div>
                 <div class="col-3">
                     {{-- <label for="check_out" class="form-label">Check Out</label> --}}
-                    <input type="text" class="form-control" id="check_out" name="check_out" autocomplete="off" placeholder="Check Out" onfocus="(this.type='date')">
+                    <input type="text" class="form-control" id="check_out" name="check_out" autocomplete="off"
+                        placeholder="Check Out" onfocus="(this.type='date')">
                 </div>
                 {{-- <div class="col-2">
                     <label for="total_payment" class="form-label">Total Payment</label>
@@ -134,14 +141,18 @@
                 </div>
             </div>
         </form>
-    </div> 
+    </div>
     @endauth
 
     <div class="about-us container d-flex mb-5 justify-content-center">
         <div class="hotel-desc  text-center">
             <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nobis magnam nesciunt corporis provident qui pariatur fuga ducimus, ipsum tempore vitae error, minima, fugit iste ipsam dolorum assumenda rerum. Deleniti voluptatum iure doloribus dolorem aperiam. Explicabo dolores corporis ullam consectetur, mollitia quisquam cum modi similique iusto nisi aut optio, molestias neque eaque non? Numquam, dignissimos? Ratione itaque nam harum magnam animi officia porro, sunt ex.</p>
-           
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nobis magnam nesciunt corporis provident
+                qui pariatur fuga ducimus, ipsum tempore vitae error, minima, fugit iste ipsam dolorum assumenda rerum.
+                Deleniti voluptatum iure doloribus dolorem aperiam. Explicabo dolores corporis ullam consectetur,
+                mollitia quisquam cum modi similique iusto nisi aut optio, molestias neque eaque non? Numquam,
+                dignissimos? Ratione itaque nam harum magnam animi officia porro, sunt ex.</p>
+
         </div>
     </div>
 
@@ -149,11 +160,11 @@
         <h2 class="text-center mb-4">Rooms</h2>
         <div class="row">
             <div class="col-md-6">
-                <img src="/image/superior.jpg" class="shadow img-fluid" >
+                <img src="/image/superior.jpg" class="shadow img-fluid">
             </div>
             <div class="col-md-6">
-                <img src="/image/deluxe.jpg" class=" shadow img-fluid" >
-            </div> 
+                <img src="/image/deluxe.jpg" class=" shadow img-fluid">
+            </div>
         </div>
     </div>
 
@@ -225,7 +236,10 @@
     {{-- GMaps --}}
     <div class="location container mb-5 text-center">
         <h2 class="mb-4">Location</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2034969634324!2d106.82652621406348!3d-6.23688679548534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e7f183d3fd%3A0xf2f89088c7d7440c!2sJl.%20Gatot%20Subroto%20No.Kav%2018%2C%20RT.9%2FRW.4%2C%20Kuningan%20Tim.%2C%20Kecamatan%20Setiabudi%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012950!5e0!3m2!1sid!2sid!4v1663809347612!5m2!1sid!2sid" width="1100" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2034969634324!2d106.82652621406348!3d-6.23688679548534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e7f183d3fd%3A0xf2f89088c7d7440c!2sJl.%20Gatot%20Subroto%20No.Kav%2018%2C%20RT.9%2FRW.4%2C%20Kuningan%20Tim.%2C%20Kecamatan%20Setiabudi%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012950!5e0!3m2!1sid!2sid!4v1663809347612!5m2!1sid!2sid"
+            width="1100" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     {{-- Footer --}}
@@ -234,7 +248,8 @@
             <div class="row row-cols-5">
                 <div class="col">
                     <a href="/" class="d-flex align-items-center mb-3 link-white text-decoration-none">
-                        <img src="/image/logo.jpeg" alt="" width="100" height="100" class="d-inline-block align-text-center">
+                        <img src="/image/logo.jpeg" alt="" width="100" height="100"
+                            class="d-inline-block align-text-center">
                         <h4 class="text-white ms-3">Royal Galaxy</h4>
                     </a>
                 </div>
