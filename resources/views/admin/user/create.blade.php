@@ -30,7 +30,7 @@
             </div>
             <div class="mb-4">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" autocomplete="off">
+                <input type="text" class="form-control" id="password" name="password" autocomplete="off">
             </div>
             <button type="submit" class="btn btn-primary float-right">Submit</button>
         </form>

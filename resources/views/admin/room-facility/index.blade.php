@@ -58,7 +58,7 @@
 <div class="card">
     <div class="card-header">
         Room Facility Data
-        <a href="/admin/room-facility" class="btn btn-primary btn-sm float-right ml-3">Create</a>
+        <a href="/admin/room-facility/create" class="btn btn-primary btn-sm float-right ml-3">Create</a>
     </div>
     <div class="card-body">
         <table class='table table-striped' id="table1">
