@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <a class="nav-link active text-secondary" aria-current="page" href="/">Home</a>
                     <a class="nav-link text-secondary" href="/rooms">Rooms</a>
-                    <a class="nav-link flex-fill text-secondary" href="/facilities">Facilities</a>
+                    <a class="nav-link text-secondary" href="/facilities">Facilities</a>
                     @auth
                     <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
                         <li class="dropdown">
@@ -54,7 +54,7 @@
                         </li>
                     </ul>
                     @else
-                    <a href="/login" type="button" class="btn btn-primary float-end px-4 btn-sm me-2">Login</a>
+                    <a href="/login" type="button" class="btn btn-dark ms-auto px-4 btn-sm me-2">Login</a>
                     @endauth
                 </div>
             </div>
