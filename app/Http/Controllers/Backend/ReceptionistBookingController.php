@@ -113,7 +113,7 @@ class ReceptionistBookingController extends Controller
             $booking = Booking::latest()->get();
         }
 
-        return view('receptionist   .booking.index',[
+        return view('receptionist.booking.index',[
             'booking' => $booking
         ]);
     }
