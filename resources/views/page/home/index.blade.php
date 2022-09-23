@@ -41,6 +41,9 @@
                     <a class="nav-link text-secondary" href="/rooms">Rooms</a>
                     <a class="nav-link text-secondary" href="/facilities">Facilities</a>
                     @auth
+                    <a class="nav-link text-secondary" href="/invoice">Your Order</a>
+                    @endauth
+                    @auth
                     <ul class="navbar-nav d-flex ms-auto align-items-center navbar-light ml-auto">
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown"
@@ -145,20 +148,16 @@
     @endauth
 
     <div class="about-us container d-flex mb-5 justify-content-center">
-        <div class="hotel-desc  text-center">
+        <div class="hotel-desc text-center mb-5">
             <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nobis magnam nesciunt corporis provident
-                qui pariatur fuga ducimus, ipsum tempore vitae error, minima, fugit iste ipsam dolorum assumenda rerum.
-                Deleniti voluptatum iure doloribus dolorem aperiam. Explicabo dolores corporis ullam consectetur,
-                mollitia quisquam cum modi similique iusto nisi aut optio, molestias neque eaque non? Numquam,
-                dignissimos? Ratione itaque nam harum magnam animi officia porro, sunt ex.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus sequi praesentium nam architecto, inventore assumenda alias exercitationem illo dolorem fugiat eveniet delectus aliquid quidem. Ipsum, iure architecto vitae rem velit voluptatibus quas sed quidem suscipit. Nulla amet exercitationem optio nobis, ut blanditiis voluptatum cupiditate recusandae laudantium dolores facere odio aliquid suscipit eaque rerum a, molestias provident ducimus mollitia ipsam magnam incidunt. Dolorum nam ab magni? Quia eligendi, sint ex commodi aut maxime sed vitae voluptas vero, dolorem earum quaerat sit quas accusantium modi quidem perspiciatis. Nulla ut eum odio quas velit, atque, officiis quam nisi et aliquam eaque. Voluptate maiores doloremque quisquam blanditiis officia, illum ullam delectus aliquam labore repudiandae molestias, accusantium animi rem temporibus sint dolores. Fuga eius neque hic sit aspernatur cum perferendis nisi natus a dignissimos sapiente accusantium odio atque consequuntur sunt, molestiae rerum id. Repellendus cum excepturi quasi fugit tenetur doloribus aliquid nam aspernatur. Veritatis nisi unde corporis vitae necessitatibus, iusto dolores labore quisquam, qui rem aperiam fuga facilis exercitationem totam neque doloremque similique nesciunt voluptas officia eligendi mollitia, inventore pariatur. Porro hic doloremque, quis consequuntur commodi assumenda quibusdam animi id possimus at illo expedita eaque. Tenetur sint maxime quisquam nemo veritatis rem quae cumque.</p>
 
         </div>
     </div>
 
     <div class="container mb-5">
         <h2 class="text-center mb-4">Rooms</h2>
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-md-6">
                 <img src="/image/superior.jpg" class="shadow img-fluid">
             </div>
@@ -170,7 +169,7 @@
 
     <div class="facilities container mb-5 mt-5">
         <h2 class="text-center mb-4">Facility</h2>
-        <div class="f-body d-flex justify-content-evenly">
+        <div class="f-body d-flex justify-content-evenly mb-5">
             <div class="card" style="width: 23rem;">
                 <img src="/image/cafe.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
