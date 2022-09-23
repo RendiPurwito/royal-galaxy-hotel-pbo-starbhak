@@ -77,11 +77,12 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Booking Code</th>
                     <th>Room Type</th>
                     <th>Qty</th>
                     <th>Check In</th>
                     <th>Check Out</th>
-                    <th>Total Pembayaran</th>
+                    <th>Total Payment</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -89,13 +90,13 @@
                 @foreach ($booking as $row)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $row->booking_number }}</td>
                     <td>{{ $row->user->name }}</td>
+                    <td>{{ $row->booking_code }}</td>
                     <td>{{ $row->room->room_type }}</td>
                     <td>{{ $row->qty }}</td>
                     <td>{{ $row->check_in }}</td>
                     <td>{{ $row->check_out }}</td>
-                    <td>{{ $row->total_payment }}</td>
+                    <td>${{ $row->total_payment }}</td>
                     <td >
                         <a href="/admin/booking/{{ $row->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                         <a href="/admin/booking/{{ $row->id }}" class="btn btn-danger btn-sm">Delete</a>

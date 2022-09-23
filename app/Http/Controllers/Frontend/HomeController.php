@@ -78,7 +78,7 @@ class HomeController extends Controller
     }
 
     public function print(){
-        $booking = Booking::all();
+        $booking = Booking::where('user_id',auth()->user()->id)->get();
         $user = User::all();
         $room = Room::all();
         $room_facility = RoomFacility::all();

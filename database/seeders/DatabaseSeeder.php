@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        RoomFacility::factory(10)->create();
+        // RoomFacility::factory(10)->create();
         
-        PublicFacility::factory(50)->create();
+        // PublicFacility::factory(50)->create();
         
         User::create([
             'name' => 'Sabrina Putri',
